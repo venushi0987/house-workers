@@ -1,0 +1,8 @@
+# Local environment variables (Passwords, DB links)
+.env
+
+# Dependency directory
+node_modules/
+
+# Debug logs
+npm-debug.log*
