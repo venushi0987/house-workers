@@ -3,19 +3,18 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
-// .env ෆයිල් එක load කිරීම
 dotenv.config();
 
 const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // JSON data handle කරන්න
+app.use(express.json()); 
 
-// Database එක සම්බන්ධ කිරීම
+app.use('/api/auth', require('./routes/authRoutes'));
+
 connectDB();
 
-// Basic Route එකක් (ටෙස්ට් කරලා බලන්න)
 app.get('/', (req, res) => {
   res.send('House Workers App Backend is running successfully!');
 });
